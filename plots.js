@@ -10,14 +10,13 @@ var time_series = data.time_series;
 
 // Note to self - keep gender column and create stacked bar chart
 function init() {
-    x = [];
-    y = [];
     getData(top_10_names);
-    makeChart(top_10_names, 'Top 10 Names Overall');
+    makeChart(top_10_names, 'Most Popular Names');
 };
-init();
 
 function getData(dataset) {
+    x = [];
+    y = [];
     dataset.forEach((item) => x.push(item.Name));
     dataset.forEach((item) => y.push(item.Count));
 }
@@ -35,32 +34,43 @@ function makeChart(dataset,title) {
     Plotly.newPlot("plot", data, layout);
 }
 
+
+
+
 // Create switch function by dropdown selection 
 d3.selectAll("#selDataset").on("change", updatePlot);
 
 function updatePlot() {
-    var dropdownMenu = d3.selectAll('#selDataset').value;
-    x = [];
-    y = [];
-    
-    switch(dropdownMenu) {
-        case "mostPopularNames":
-            // getData(top_10_names);
-            // makeChart(top_10_names, 'Top 10 Names Overall');
-            console.log(`option1`)
-            break;
-        case "popularFemaleNames":
-            // getData(top_f_names);
-            // makeChart(top_f_names, 'Top 10 Female Names');
-            console.log(`gg`);
-            break;
-        case "popularMaleNames":
-            getData(top_m_names);
-            makeChart(top_m_names, 'Top 10 Male Names');
-            break;
-    }
-};
 
+    // Select the dropdown menu value
+    var dropdownMenu = d3.select("#selDataset");
+    var dataset = dropdownMenu.node().value;
+
+    // Switch function based on which dropdown option is chosen
+    switch(dataset) {
+        case "mostPopularNames":
+          getData(top_10_names);
+          break;
+    
+        case "popularFemaleNames":
+          getData(top_f_names);
+          break;
+    
+        case "popularMaleNames":
+          getData(top_m_names);
+          break;
+    
+        default:
+          getData(top_10_names);
+          break;
+      }
+    
+    // Update plot
+    Plotly.restyle("plot", "x", [x]);
+    Plotly.restyle("plot", "y", [y]);
+    }
+
+init();
 
 
     
