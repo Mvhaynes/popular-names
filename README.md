@@ -1,6 +1,6 @@
 ## Popular-names 
 
-What names are trendy? Timeless? What names were popular in our grandparents' generations, but are seeing a fall in popularity? 
+What names are trendy? Timeless? What names were popular in our grandparents' generations, but are seeing a decline? 
 
 View the dashboard [here](https://mvhaynes.github.io/popular-names/). 
 ## Overview 
