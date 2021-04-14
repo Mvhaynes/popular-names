@@ -5,13 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Popular Baby Names Dashboard</title>
+  <title>Popular Baby Names Data</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <script src="https://d3js.org/d3.v5.min.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  
 </head>
 
 <body>
@@ -27,7 +28,6 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
-                
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Explore
@@ -36,7 +36,6 @@
                         <a class="dropdown-item" href="">Most Popular Baby Names</a>
                         <a class="dropdown-item" href="">Time Series</a>
                         <a class="dropdown-item" href="">By the Decade</a>
-
                     </div>
                 </li>
                 <li class="nav-item">
@@ -47,46 +46,13 @@
     </div>
 </nav>
 
-  <div class='container'>
-    <div class='main'>
-      <select id="selDataset">
-        <option value="mostPopularNames">Most Popular Names</option>
-        <option value="popularMaleNames">Most Popular Male Names</option>
-        <option value="popularFemaleNames">Most Popular Female Names</option>
-      </select>
-      <div id="CSVTable"></div>
-  
-  <!-- <h1>View Data</h1> -->
-  <!-- <div class="col-md-10">
-    <div id="table-area" class="">
-      <table id="ufo-table" class="table table-striped">
-        <thead>
-          <tr>
-            <th class="table-head">Name</th>
-            <th class="table-head">Count</th>
+<h1>View Data</h1>
 
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-  </div>
-</div> -->
-</div>
 
   
 
-  <!-- <label>By the Decade:</label>
-  <select id="selDataset">
-    
-    <option value="dataset1">All years</option>
-    <option value="dataset1">2004-2014</option>
-    <option value="dataset2">1993-2003</option>
-    <option value="dataset2">1982-1992</option>
-  </select> -->
-  <script src='data.js'></script>
-  <script src="plots.js"></script>
-
+<script src='data.js'></script>
+<script src="datatable.js"></script>
 
 </body>
 <!-- JavaScript Bundle with Popper -->

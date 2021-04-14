@@ -75,6 +75,7 @@ function updatePlot() {
 // Other changes to make: 
 // - Update chart colors based on gender 
 // - Stacked chart 
+// - Update dropdown menu formatting
 
 init();
 
