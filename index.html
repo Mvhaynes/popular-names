@@ -13,17 +13,14 @@
 <body>
 
   <div id="plot"></div>
-  <div class="col-md-10">
+  <!-- <h1>View Data</h1> -->
+  <!-- <div class="col-md-10">
     <div id="table-area" class="">
       <table id="ufo-table" class="table table-striped">
         <thead>
           <tr>
-
             <th class="table-head">Name</th>
             <th class="table-head">Count</th>
-
-
-
 
           </tr>
         </thead>
@@ -31,14 +28,24 @@
       </table>
     </div>
   </div>
-</div>
+</div> -->
 </div>
 
   <select id="selDataset">
-    <option value="dataset1">DataSet1</option>
-    <option value="dataset2">DataSet2</option>
+    <option value="mostPopularNames">Most Popular Names</option>
+    <option value="popularFemaleNames">Most Popular Female Names</option>
+    <option value="popularMaleNames">Most Popular Male Names</option>
   </select>
-  <script src='output.js'></script>
+
+  <!-- <label>By the Decade:</label>
+  <select id="selDataset">
+    
+    <option value="dataset1">All years</option>
+    <option value="dataset1">2004-2014</option>
+    <option value="dataset2">1993-2003</option>
+    <option value="dataset2">1982-1992</option>
+  </select> -->
+  <script src='data.js'></script>
   <script src="plots.js"></script>
 
 
