@@ -19,7 +19,7 @@ Due to the large size of the file, the CSV was loaded into a PostGreSQL database
 
 ## Webpage 
 
-The queried data was added to a python dictionary and exported as a JSON file. Using Javascript and Plotly, I accessed the dictionaries to create plots for each query. 
+The queried data was added to a python dictionary and exported as a JSON file. Using Javascript I accessed the dictionaries and used Plotly to generate charts for each query. The D3 library allows users to restyle plots on the same page based on the dropdown menu options.
 
 ## Tools used 
 
