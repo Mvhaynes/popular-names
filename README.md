@@ -2,6 +2,7 @@
 
 What names are trendy? Timeless? What names were popular in our grandparents' generations, but are seeing a fall in popularity? 
 
+View the dashboard [here](https://mvhaynes.github.io/popular-names/). 
 ## Overview 
 
 Script that uses SQLAlchemy to access a database of US Baby Names and query the following data: 
@@ -22,7 +23,9 @@ The queried data was added to a python dictionary and exported as a JSON file. U
 
 ## Tools used 
 
-Python/Jupyter Notebook/Pandas, PostGreSQL/SQLAlchemy, Javascript/Bootstrap, HTML/CSS. 
+* Python/Jupyter Notebook/Pandas
+* PostGreSQL/SQLAlchemy
+* Javascript/Bootstrap/D3 and HTML/CSS
 
 ## Limitations 
 
