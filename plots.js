@@ -27,7 +27,7 @@ function makeChart(title) {
         y: y,
         type: 'bar',
         marker: {
-            color: 'rgb(158,202,225)'}
+            color: 'rgb(115, 172, 192, 1)'}
     }];
     layout = {
         title: title,
@@ -76,6 +76,41 @@ function updatePlot() {
 // - Update chart colors based on gender 
 // - Stacked chart 
 // - Update dropdown menu formatting
+
+// Time plot for most popular names 
+function timeSeriesData(dataset) {
+    dataName = [];
+    count = [];
+    year = [];
+    dataset.forEach((data) => dataName.push(data.Name));
+    dataset.forEach((data) => count.push(data.Count));
+    dataset.forEach((data) => year.push(data.Year));
+}
+
+timeSeriesData(time_series);
+
+// Add most popular names over times separated by gender 
+
+var data = [{
+  type: 'line',
+  x: year,
+  y: count,
+  mode: 'lines',
+  transforms: [{
+    type: 'groupby',
+    groups: dataName,
+  }]
+}]
+var layout = {
+    title: 'Most Popular Names Over Time',
+    font: {
+        family: 'Raleway',
+        size: 17,
+        color: 'black'
+      }
+  };
+
+Plotly.newPlot('timeplot', data, layout)
 
 init();
 
