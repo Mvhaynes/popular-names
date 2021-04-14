@@ -11,17 +11,17 @@ var time_series = data.time_series;
 // Note to self - keep gender column and create stacked bar chart
 function init() {
     getData(top_10_names);
-    makeChart(top_10_names, 'Most Popular Names');
+    makeChart('Most Popular Names');
 };
-
+// Function that changes the x and y values for each dataset 
 function getData(dataset) {
     x = [];
     y = [];
     dataset.forEach((item) => x.push(item.Name));
     dataset.forEach((item) => y.push(item.Count));
 }
-
-function makeChart(dataset,title) {
+// Function that makes a new chart with the updated values
+function makeChart(title) {
     data = [{
         x: x,
         y: y,
@@ -30,14 +30,17 @@ function makeChart(dataset,title) {
             color: 'rgb(158,202,225)'}
     }];
     layout = {
-        title: title}
+        title: title,
+        font: {
+            family: 'Raleway',
+            size: 17,
+            color: 'black'
+          }
+        }
     Plotly.newPlot("plot", data, layout);
 }
 
-
-
-
-// Create switch function by dropdown selection 
+// Switch function based on dropdown selection
 d3.selectAll("#selDataset").on("change", updatePlot);
 
 function updatePlot() {
@@ -69,60 +72,16 @@ function updatePlot() {
     Plotly.restyle("plot", "x", [x]);
     Plotly.restyle("plot", "y", [y]);
     }
+// Other changes to make: 
+// - Update chart colors based on gender 
+// - Stacked chart 
 
 init();
 
 
-    
-// // Select the dropdown menu 
-// var dropdownMenu = d3.selectAll("#selDataset");
-
-// // Function to update the filter box 
-// dropdownMenu.on("change", function() {
-
-//     // Select filter option, label, placeholder
-//     var filterOption = dropdownMenu.property("value");
-//     var label = d3.selectAll("label");
-//     var placeholder = d3.selectAll("input");
-
-//     // Change label and placeholder 
-//     if (filterOption == 'City') {
-//         label.text('Enter a City');
-//         placeholder.attr("placeholder","Seattle");
-//     }
-//     else if (filterOption == 'State') {
-//         label.text('Enter a State');
-//         placeholder.attr("placeholder","Washington");
-//     }
-//     else if (filterOption == 'Country') {
-//         label.text('Enter a Country');
-//         placeholder.attr("placeholder","US");
-//     }
-//     else if (filterOption == 'Shape') {
-//         label.text('Enter a Shape');
-//         placeholder.attr("placeholder","Circle")
-//     }
-//     else if (filterOption == 'Date') {
-//         label.text('Enter a Date');
-//         placeholder.attr("placeholder","1/11/2010");
-// }});
+   
 
 
-
-
-// var trace1 = {
-//     x: top_10_names.map(object => object.name)
-//     y: [22.7, 17.1, 9.9, 8.7, 7.2, 6.1, 6.0, 4.6],
-//     type: "bar"
-//   };
-  
-//   var data = [trace1];
-  
-//   var layout = {
-//     title: "'Bar' Chart"
-//   };
-  
-//   Plotly.newPlot("plot", data, layout);
 
 // function appendTable(dataset) {
 //     dataset.forEach((dataRow) => { 
@@ -136,9 +95,3 @@ init();
 //     });
 // })};
 // appendTable(top_10_names);
-
-
-// for (var i = 0; i < top_10_names.length; i++) {
-//     x.push(top_10_names[i]['Name']);
-//     y.push(top_10_names[i]['Count']);
-// };
