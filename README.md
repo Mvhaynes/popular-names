@@ -30,6 +30,7 @@ The queried data was added to a python dictionary and exported as a JSON file. U
 ## Limitations 
 
 For privacy reasons, not all data is provided. Unique names (defined as >5 names per year by area) are not included in the dataset. 
+Different spellings of the same name might throw off data (ie. Haley, Hailey, Haileigh would all be separate names).
 
 ## Future plans 
 * Use State names csv to pull the same information by state 

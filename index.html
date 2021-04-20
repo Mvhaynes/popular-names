@@ -48,14 +48,37 @@
 </nav>
 
   <div class='container'>
-    <div class='main'>
+    <div class='main' style="background-color: white">
       <select id="selDataset">
         <option value="mostPopularNames">Most Popular Names</option>
         <option value="popularMaleNames">Most Popular Male Names</option>
         <option value="popularFemaleNames">Most Popular Female Names</option>
       </select>
       <div id="plot"></div>
+
+      <!-- <select id="selTimeplot">
+        <option value="overall">Absolute</option>
+        <option value="relative">Relative</option>
+      </select> -->
+      <p>This graph demonstrates the differences between gendered names. One thing to note is that the second most popular female name 
+        is less popular than the least popular male name (of the top names), and only one female name even makes the list of most popular names overall. 
+        We see a lot more variation in given traditionally female names compared to male names. </p>
       <div id="timeplot"></div>
+      
+
+      <p style="text-align: center;">(Click once to remove a name from the chart or double click to see one name at a time.)
+        <br>
+        <br>
+      It's interesting to note some of the differences between relative and absolute popularity over time. With some names, such as Michael
+      and David, we see a similar trend between both graphs where the names peak in the mid-1900s. However, with other names such as John, we actually see
+      the absolute number stay relatively stable in the late-1800s, but the relative popularity sees a decline. <br><br> The name Mary in particular is also interesting to see over time. 
+      Most of these names appear to peak during the mid-1900s, likely due to the baby boom, but the name Mary appears to have its moment in the late 1800s to early 1900s, and then sees a sharp decline ever since. 
+      </p>
+      
+      <div id="relative"></div>
+
+
+
 
   
     </div>

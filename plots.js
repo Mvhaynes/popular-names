@@ -8,7 +8,6 @@ var f_2004_2014 = data.f_2004_2014;
 var m_2004_2014 = data.m_2004_2014;
 var time_series = data.time_series;
 
-// Note to self - keep gender column and create stacked bar chart
 function init() {
     getData(top_10_names);
     makeChart('Most Popular Names');
@@ -76,22 +75,24 @@ function updatePlot() {
 // - Update chart colors based on gender 
 // - Stacked chart 
 // - Update dropdown menu formatting
+// Add most popular names over times separated by gender 
+// add filters to the charts 
+
 
 // Time plot for most popular names 
 function timeSeriesData(dataset) {
     dataName = [];
     count = [];
     year = [];
+    relativePop = [];
     dataset.forEach((data) => dataName.push(data.Name));
     dataset.forEach((data) => count.push(data.Count));
-    dataset.forEach((data) => year.push(data.Year));
+    dataset.forEach((data) => year.push(data.Year))
+    dataset.forEach((data) => relativePop.push(data['Relative Popularity (%)']));
 }
-
 timeSeriesData(time_series);
 
-// Add most popular names over times separated by gender 
-
-var data = [{
+var data1 = [{
   type: 'line',
   x: year,
   y: count,
@@ -110,24 +111,36 @@ var layout = {
       }
   };
 
-Plotly.newPlot('timeplot', data, layout)
+Plotly.newPlot('timeplot', data1, layout)
+
+// Relative popularity over time 
+var data2 = [{
+  type: 'line',
+  x: year,
+  y: relativePop,
+  line: {
+    dash: 'dash',
+    width: 2
+  },
+  transforms: [{
+    type: 'groupby',
+    groups: dataName,
+  }]
+}]
+var layout = {
+    title: 'Relative Popularity Over Time',
+    font: {
+        family: 'Raleway',
+        size: 17,
+        color: 'black'
+      }
+  };
+
+Plotly.newPlot('relative', data2, layout)
+
+
 
 init();
 
 
    
-
-
-
-// function appendTable(dataset) {
-//     dataset.forEach((dataRow) => { 
-//     // Add a row 
-//     var row = d3.select("tbody").append("tr");
-
-//     // Add a cell and enter values into each cell 
-//     Object.entries(dataRow).forEach(function([key,value]) {
-//         var cell = row.append("td");
-//         cell.text(value);
-//     });
-// })};
-// appendTable(top_10_names);

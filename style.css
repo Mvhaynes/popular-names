@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(248, 245, 245, 0.986);
     font-family: 'Raleway', sans-serif;
   }
   
@@ -15,4 +15,7 @@ h1 {
     padding-top: 20px;
     font-size: 30px;
     text-align: center;
+}
+#selTimeplot {
+  margin-top: 30px;
 }
